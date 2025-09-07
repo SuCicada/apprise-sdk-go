@@ -81,6 +81,11 @@ type errorResponse struct {
 	Error string `json:"error"`
 }
 
+func Send(ctx context.Context, url string, m Message) error {
+	notifier := Notifier{URL: url}
+	return notifier.Send(ctx, m)
+}
+
 // Send sends a message to the Apprise API.
 func (n *Notifier) Send(ctx context.Context, m *Message) error {
 	// Check if the message has a body.

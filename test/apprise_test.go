@@ -17,4 +17,12 @@ func TestNotifier(t *testing.T) {
 		Body:  "body",
 		Tag:   "alert",
 	})
+
+	// -------
+	apprise.Send(context.Background(), "ssss",
+		apprise.Message{
+			Title: "title",
+			Body:  "body",
+			Tag:   "alert",
+		})
 }
