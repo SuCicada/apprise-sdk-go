@@ -83,7 +83,7 @@ type errorResponse struct {
 
 func Send(ctx context.Context, url string, m Message) error {
 	notifier := Notifier{URL: url}
-	return notifier.Send(ctx, m)
+	return notifier.Send(ctx, &m)
 }
 
 // Send sends a message to the Apprise API.
